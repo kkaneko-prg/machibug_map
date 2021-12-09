@@ -36,4 +36,4 @@
 https://xd.adobe.com/view/8e83078e-0878-49d5-b821-2e4478822330-dbd0/
 
 ### ER図
-![街バグmap_ERD](https://user-images.githubusercontent.com/72340915/145343504-3628e158-6c8b-46e6-989f-5d5f6be6701c.png)
+![街バグmap_ERD](https://user-images.githubusercontent.com/72340915/145344706-412ca39e-0feb-4119-96f9-a89dc9223b22.png)
