@@ -42,6 +42,9 @@ group :development, :test do
   # Test
   gem 'rspec-rails'
   gem 'factory_bot_rails'
+
+  # CSS framework
+  gem "bulma-rails"
 end
 
 group :development do
