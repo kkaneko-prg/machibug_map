@@ -25,7 +25,10 @@ gem 'jbuilder', '~> 2.7'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
+
+gem "bulma-rails"
 gem 'sorcery'
+gem 'rails-i18n'
 
 group :development, :test do
   # Debugger
@@ -43,9 +46,6 @@ group :development, :test do
   # Test
   gem 'rspec-rails'
   gem 'factory_bot_rails'
-
-  # CSS framework
-  gem "bulma-rails"
 end
 
 group :development do
