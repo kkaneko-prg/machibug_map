@@ -32,6 +32,15 @@ module MachibugMap
     # Don't generate system test files.
     config.generators.system_tests = nil
 
+    # 翻訳ファイルをどこに配置するかの指定
+    config.i18n.load_path += Dir[Rails.root.join('config/locales/**/*.{rb,yml}').to_s]
+
+    # デフォルトのlocaleを日本語(:ja)にする
+    config.i18n.default_locale = :ja
+
+    # デフォルトの時間を日本時間にする
+    config.time_zone = "Tokyo"
+
     config.generators do |g|
       g.skip_routes true
       g.assets false
