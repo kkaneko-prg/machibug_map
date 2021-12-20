@@ -19,6 +19,8 @@
 @import "bulma";
 
 // SCSS
+@import 'header';
+@import 'before_login_header';
 
 // すべてのbodyに適用
 body {
