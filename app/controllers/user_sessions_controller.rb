@@ -2,6 +2,7 @@ class UserSessionsController < ApplicationController
   skip_before_action :require_login, only: %i[new create]
 
   def new
+    # 現在ログイン中の時は、root_pathへリダイレクトする。
     if current_user
       redirect_to root_path
     end

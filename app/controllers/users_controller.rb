@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    # 現在ログイン中の時は、root_pathへリダイレクトする。
     if current_user
       redirect_to root_path
     end
