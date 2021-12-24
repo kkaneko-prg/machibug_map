@@ -31,9 +31,6 @@ gem "bulma-rails"
 gem 'sorcery'
 gem 'rails-i18n'
 
-# Validation
-gem 'active_storage_validations'
-
 group :development, :test do
   # Debugger
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
