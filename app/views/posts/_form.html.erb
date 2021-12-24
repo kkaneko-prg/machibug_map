@@ -1,0 +1,20 @@
+<%= form_with(model: post, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :adress %>
+    <%= form.text_field :adress %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :caption %>
+    <%= form.text_area :caption %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :images, direct_upload: true, multiple: true %>
+  </div>
+  
+  <div class="actions">
+      <%= form.submit %>
+  </div>
+<% end %>
