@@ -10,21 +10,24 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    # 現在ログイン中の時は、root_pathへリダイレクトする。
     if current_user
       redirect_to root_path
     end
   end
 
-  def edit; end
-
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to login_path
+      # ユーザー登録が成功したら、そのままログインが完了した状態になる。
+      auto_login(@user)
+      redirect_to root_url
     else
       render :new
     end
   end
+
+  def edit; end
 
   def update
     respond_to do |format|
