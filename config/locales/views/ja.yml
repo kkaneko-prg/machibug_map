@@ -12,3 +12,6 @@ ja:
       title: 'ログイン'
       to_register_page: '登録ページへ'
       password_forget: 'パスワードをお忘れの方はこちら'
+  posts:
+    new:
+      title: '新規投稿'
