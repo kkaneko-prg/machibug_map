@@ -3,8 +3,7 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @post = Post.new
@@ -13,14 +12,14 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      redirect_to posts_path
+      redirect_to posts_path, success: t('.success')
     else
+      flash.now[:danger] = t('.fail')
       render :new
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   private
 

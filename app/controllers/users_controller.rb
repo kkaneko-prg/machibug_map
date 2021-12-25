@@ -10,9 +10,9 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    # 現在ログイン中の時は、root_pathへリダイレクトする。
-    if current_user
-      redirect_to root_path
+    # 現在ログイン中の時は、rootへリダイレクトする。
+    if logged_in?
+      redirect_to root_url
     end
   end
 
@@ -21,33 +21,18 @@ class UsersController < ApplicationController
     if @user.save
       # ユーザー登録が成功したら、そのままログインが完了した状態になる。
       auto_login(@user)
-      redirect_to root_url
+      redirect_to root_url, success: t('.success')
     else
+      flash.now[:danger] = t('.fail')
       render :new
     end
   end
 
   def edit; end
 
-  def update
-    respond_to do |format|
-      if @user.update(user_params)
-        format.html { redirect_to @user, notice: "User was successfully updated." }
-        format.json { render :show, status: :ok, location: @user }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  def update; end
 
-  def destroy
-    @user.destroy
-    respond_to do |format|
-      format.html { redirect_to users_url, notice: "User was successfully destroyed." }
-      format.json { head :no_content }
-    end
-  end
+  def destroy; end
 
   private
 
