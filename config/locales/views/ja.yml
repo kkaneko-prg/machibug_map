@@ -1,17 +1,18 @@
 ja:
   defaults:
-    login: 'ログイン'
-    register: '登録'
-    logout: 'ログアウト'
+    login: 'login'
+    register: 'submit'
+    logout: 'logout'
+    post: 'post'
   users:
     new:
       title: 'ユーザー登録'
       to_login_page: 'ログインページへ'
   user_sessions:
     new:
-      title: 'ログイン'
+      title: 'login'
       to_register_page: '登録ページへ'
       password_forget: 'パスワードをお忘れの方はこちら'
   posts:
     new:
-      title: '新規投稿'
+      title: 'post'
