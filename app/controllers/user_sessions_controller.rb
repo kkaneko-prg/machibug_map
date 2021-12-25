@@ -2,9 +2,9 @@ class UserSessionsController < ApplicationController
   skip_before_action :require_login, only: %i[new create]
 
   def new
-    # 現在ログイン中の時は、root_pathへリダイレクトする。
-    if current_user
-      redirect_to root_path
+    # 現在ログイン中の時は、rootへリダイレクトする。
+    if logged_in?
+      redirect_to root_url
     end
   end
 
@@ -12,14 +12,15 @@ class UserSessionsController < ApplicationController
     @user = login(params[:email], params[:password])
 
     if @user
-      redirect_back_or_to root_path
+      redirect_back_or_to root_path, success: t('.success')
     else
+      flash.now[:danger] = t('.fail')
       render :new
     end
   end
 
   def destroy
     logout
-    redirect_to root_path
+    redirect_to root_url, success: t('.success')
   end
 end

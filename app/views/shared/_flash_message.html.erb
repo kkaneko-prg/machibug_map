@@ -1,0 +1,11 @@
+<% flash.each do |message_type, message| %>
+  <div class="notification is-<%= message_type %> is-light"><%= message %><button class="delete"></button></div>
+<% end %>
+
+<script>
+for (const element of document.querySelectorAll('.notification > .delete')) {
+    element.addEventListener('click', e => {
+        e.target.parentNode.classList.add('is-hidden');
+    });
+}
+</script>
