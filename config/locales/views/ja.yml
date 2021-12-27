@@ -4,6 +4,7 @@ ja:
     register: 'submit'
     logout: 'logout'
     post: 'post'
+    update: update
   users:
     new:
       title: 'ユーザー登録'
@@ -13,7 +14,7 @@ ja:
       fail: 'ユーザー登録に失敗しました'
   user_sessions:
     new:
-      title: 'login'
+      title: login
       to_register_page: '登録ページへ'
       password_forget: 'パスワードをお忘れの方はこちら'
     create:
@@ -21,9 +22,17 @@ ja:
       fail: 'ログインに失敗しました'
     destroy:
       success: 'ログアウトしました'
+  profiles:
+    update:
+      success: "『%{name}』さんのプロフィールを更新しました"
+      fail: '更新に失敗しました'
+    show:
+      title: profile
+    edit:
+      title: edit profile
   posts:
     new:
-      title: 'post'
+      title: post
     create:
       success: '街バグの投稿が完了しました'
       fail: '投稿に失敗しました'      
