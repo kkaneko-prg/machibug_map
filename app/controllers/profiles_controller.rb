@@ -9,6 +9,7 @@ class ProfilesController < ApplicationController
     if @user.update(user_params)
       redirect_to profile_url, success: t('.success', name: @user.name)
     else
+      flash.now[:danger] = t('.fail')
       render :edit
     end
   end
