@@ -1,10 +1,11 @@
 ja:
   defaults:
-    login: 'login'
-    register: 'submit'
-    logout: 'logout'
-    post: 'post'
+    login: login
+    register: submit
+    logout: logout
+    post: post
     update: update
+    edit: edit
   users:
     new:
       title: 'ユーザー登録'
