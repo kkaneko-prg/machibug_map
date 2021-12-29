@@ -15,6 +15,9 @@
       </table>
     </div>
     <div class="has-text-centered">
-      <button class="button is-small"><%= link_to t('defaults.edit'), edit_profile_path %></button>
+      <button class="button is-small"><%= link_to 'edit profile', edit_profile_path %></button>
+    </div>
+    <div class="has-text-centered is-size-7">
+      <%= link_to '退会', users_path(current_user), method: :delete, data: { confirm: "退会してもよろしいですか?" } %>
     </div>
 </div>
