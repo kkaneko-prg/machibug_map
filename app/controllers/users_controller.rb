@@ -1,16 +1,11 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
   skip_before_action :require_login, only: %i[index new create]
-
-  def index
-    @users = User.all
-  end
-
-  def show; end
+  before_action :set_user, only: %i[destroy]
 
   def new
     @user = User.new
-    # 現在ログイン中の時は、rootへリダイレクトする。
+    # ログイン中の場合は、root_urlへリダイレクトする。
     if logged_in?
       redirect_to root_url
     end
@@ -28,16 +23,15 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit; end
-
-  def update; end
-
-  def destroy; end
+  def destroy
+    @user.destroy
+    redirect_to root_path, success: t('.success')
+  end
 
   private
 
     def set_user
-      @user = User.find(params[:id])
+      @user = User.find(current_user.id)
     end
 
     def user_params
