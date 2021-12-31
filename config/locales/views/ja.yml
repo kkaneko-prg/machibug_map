@@ -8,7 +8,7 @@ ja:
     edit: edit
   users:
     new:
-      title: 'ユーザー登録'
+      title: sign up
       to_login_page: 'ログインページへ'
     create:
       success: 'ユーザー登録が完了しました'

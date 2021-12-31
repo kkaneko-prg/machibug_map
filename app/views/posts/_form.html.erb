@@ -1,13 +1,14 @@
-<%= form_with(model: @post, local: true) do |form| %>
+<%= form_with model: @post, local: true do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
-    <%= form.label :caption %>
-    <%= form.text_area :caption %>
+    <%= f.label :caption %>
+    <%= f.text_area :caption %>
   </div>
   <div class="field">
-    <%= form.label :photo %>
-    <%= form.file_field :photos, direct_upload: true, multiple: true %>
+    <%= f.label :photo %>
+    <%= f.file_field :photo, direct_upload: true, multiple: true %>
   </div>
   <div class="actions">
-    <%= form.submit %>
+    <%= f.submit (t 'defaults.register') %>
   </div>
 <% end %>
