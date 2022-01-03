@@ -7,10 +7,10 @@
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
           <div class="navbar-item">
-            <%= link_to 'とは？', "#"%>
+            <%= link_to('とは？', "#", {class: 'linkcolor'}) %>
           </div>
           <div class="navbar-item">
-            <%= link_to '使い方', "#"%>
+            <%= link_to('使い方', "#", {class: 'linkcolor'}) %>
           </div>
         </div>
       </div>
@@ -23,10 +23,10 @@
           <% end %>
         </div>
         <div class="navbar-item">
-          <%= link_to (t 'defaults.post'), new_post_path%>
+          <%= link_to((t 'defaults.post'), new_post_path, {class: 'linkcolor'}) %>
         </div>
         <div class="navbar-item">
-          <%= link_to (t 'defaults.login'), login_path%>
+          <%= link_to((t 'defaults.login'), login_path, {class: 'linkcolor'}) %>
         </div>
       </div>
     </div>
