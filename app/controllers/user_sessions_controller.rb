@@ -3,9 +3,7 @@ class UserSessionsController < ApplicationController
 
   def new
     # ログイン中の場合は、root_urlへリダイレクトする。
-    if logged_in?
-      redirect_to root_url
-    end
+    redirect_to root_url if logged_in?
   end
 
   def create
