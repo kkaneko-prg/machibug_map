@@ -1,14 +1,15 @@
 <%= form_with model: @post, local: true do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
+<%= render 'shared/error_messages', object: f.object %>
   <div class="field">
-    <%= f.label :caption %>
-    <%= f.text_area :caption %>
+    <%= f.label :caption, class: 'label', class: 'has-text-weight-light' %>
+    <%= f.text_area :caption, class: 'textarea', placeholder: 'キャプションを入力してください。' %>
   </div>
   <div class="field">
-    <%= f.label :photo %>
+    <%= f.label :photo, class: 'label', class: 'has-text-weight-light' %><br>
     <%= f.file_field :photo, direct_upload: true, multiple: true %>
+    <p class="help is-info">必須</p>
   </div>
-  <div class="actions">
-    <%= f.submit (t 'defaults.register') %>
+  <div class="has-text-centered mt-5">
+    <%= f.submit (t 'defaults.register'), class: 'button is-dark' %>
   </div>
 <% end %>
