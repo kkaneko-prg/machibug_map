@@ -1,5 +1,10 @@
-<div class="container">
-  <h1 class="title"><%= t('.title') %></h1>
-  <%= render 'form', { post: @post } %>
-  <%= link_to 'Back', posts_path, {class: "linkcolor"} %>
-</div>
+<section class="section">
+  <div class="container">
+    <div class="columns is-mobile is-vcentered">
+      <div class="column is-half is-offset-one-quarter">
+        <h1 class="title has-text-centered"><%= t '.title' %></h1>
+        <%= render 'form', { post: @post } %>
+      </div> 
+    </div>
+  </div>
+</section>
