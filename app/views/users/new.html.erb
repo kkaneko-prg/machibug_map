@@ -1,30 +1,37 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-      <h1 class="title"><%= t '.title' %></h1>
-      <%= form_with model: @user, local: true do |f| %>
-      <%= render 'shared/error_messages', object: f.object %>
-        <div class="form-group">
-          <%= f.label :name %>
-          <%= f.text_field :name, class: 'form-control' %>
+<section class="section">
+  <div class="container">
+    <div class="columns is-mobile is-vcentered">
+      <div class="column is-half is-offset-one-quarter">
+        <h1 class="title has-text-centered"><%= t '.title' %></h1>
+        <%= form_with model: @user, local: true do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+          <div class="field">
+            <%= f.label :name, class: 'label', class: 'has-text-weight-light' %>
+            <%= f.text_field :name, class: 'input', placeholder: 'bugchan' %>
+            <p class="help is-info">必須</p>
+          </div>
+          <div class="field">
+            <%= f.label :email, class: 'label', class: 'has-text-weight-light' %>
+            <%= f.email_field :email, class: 'input', placeholder: 'machibug@example.com' %>
+            <p class="help is-info">必須</p>
+          </div>
+          <div class="field">
+            <%= f.label :password, class: 'label', class: 'has-text-weight-light' %>
+            <%= f.password_field :password, class: 'input' %>
+            <p class="help is-info">必須 半角英数8文字以上</p>
+          </div>
+          <div class="field">
+            <%= f.label :password_confirmation, class: 'label', class: 'has-text-weight-light' %>
+            <%= f.password_field :password_confirmation, class: 'input' %>
+          </div>
+          <div class="has-text-centered mt-5">
+            <%= f.submit (t 'defaults.register'), class: 'button is-dark' %>
+          </div>
+        <% end %>
+        <div class="has-text-centered mt-2">
+          <%= link_to((t '.to_login_page'), login_path, {class: 'linkcolor'}) %>
         </div>
-        <div class="form-group">
-          <%= f.label :email %>
-          <%= f.email_field :email, class: 'form-control' %>
-        </div>
-        <div class="form-group">
-          <%= f.label :password %>
-          <%= f.password_field :password, class: 'form-control' %>
-        </div>
-        <div class="form-group">
-          <%= f.label :password_confirmation %>
-          <%= f.password_field :password_confirmation, class: 'form-control' %>
-        </div>
-        <%= f.submit (t 'defaults.register') %>
-      <% end %>
-      <div class='text-center'>
-        <%= link_to((t '.to_login_page'), login_path, {class: 'linkcolor'}) %>
-      </div>
+      </div> 
     </div>
   </div>
-</div>
+</section>
