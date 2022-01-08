@@ -30,6 +30,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'bulma-rails'
 gem 'sorcery'
 gem 'rails-i18n'
+gem 'dotenv-rails'
 
 # Validation
 gem 'active_storage_validations'
