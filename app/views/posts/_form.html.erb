@@ -1,13 +1,17 @@
 <%= form_with model: @post, local: true do |f| %>
 <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
-    <%= f.label :caption, class: 'label', class: 'has-text-weight-light' %>
-    <%= f.text_area :caption, class: 'textarea', placeholder: 'キャプションを入力してください。' %>
+    <%= f.label :photos, class: 'label', class: 'has-text-weight-light' %><br>
+    <%= f.file_field :photos, direct_upload: true, multiple: true %>
+    <p class="help is-info">必須</p>
   </div>
   <div class="field">
-    <%= f.label :photo, class: 'label', class: 'has-text-weight-light' %><br>
-    <%= f.file_field :photo, direct_upload: true, multiple: true %>
-    <p class="help is-info">必須</p>
+    <%= f.label :address, class: 'label', class: 'has-text-weight-light' %>
+    <%= f.text_field :address, class: 'input', placeholder: 'e.g. 吉祥寺駅' %>
+  </div>
+  <div class="field">
+    <%= f.label :caption, class: 'label', class: 'has-text-weight-light' %>
+    <%= f.text_area :caption, class: 'textarea', placeholder: 'キャプションを入力してください。' %>
   </div>
   <div class="has-text-centered mt-5">
     <%= f.submit (t 'defaults.register'), class: 'button is-dark' %>
