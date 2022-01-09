@@ -6,8 +6,10 @@
     <p class="help is-info">必須</p>
   </div>
   <div class="field">
-    <%= f.label :address, class: 'label', class: 'has-text-weight-light' %>
-    <%= f.text_field :address, class: 'input', placeholder: 'e.g. 吉祥寺駅' %>
+    <%= f.fields_for :spot do |s| %>
+      <%= s.label :address, class: 'label', class: 'has-text-weight-light' %>
+      <%= s.text_field :address, class: 'input', placeholder: 'e.g. 吉祥寺駅' %>
+    <% end %>
   </div>
   <div class="field">
     <%= f.label :caption, class: 'label', class: 'has-text-weight-light' %>
@@ -17,3 +19,4 @@
     <%= f.submit (t 'defaults.register'), class: 'button is-dark' %>
   </div>
 <% end %>
+  
