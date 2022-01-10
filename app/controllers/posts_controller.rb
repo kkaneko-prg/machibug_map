@@ -1,11 +1,12 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: %i[show edit update destroy]
 
   def index
     @posts = Post.all
   end
 
-  def show; end
+  def show
+    @post = Post.find(params[:id])
+  end
 
   def new
     @post = Post.new
@@ -22,9 +23,12 @@ class PostsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    @post = current_user.posts.find(params[:id])
+  end
 
   def update
+    @post = current_user.posts.find(params[:id])
     if @post.update(post_params)
       redirect_to @post, success: t('.success')
     else
@@ -34,15 +38,12 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @post = current_user.posts.find(params[:id])
     @post.destroy
     redirect_to posts_url, success: t('.success')
   end
 
   private
-
-  def set_post
-    @post = Post.find(params[:id])
-  end
 
   def post_params
     params.require(:post).permit(:caption, :address, photos: [], spot_attributes: %i[id address]).merge(user_id: current_user.id)
