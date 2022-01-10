@@ -30,12 +30,12 @@ class PostsController < ApplicationController
     else
       flash.now[:danger] = t('.fail')
       render :edit
-    end     
+    end
   end
 
   def destroy
     @post.destroy
-    redirect_to posts_url, success: t('.success') 
+    redirect_to posts_url, success: t('.success')
   end
 
   private
@@ -45,7 +45,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-  #  params.require(:post).permit(:caption, :address, photos: [])
-    params.require(:post).permit(:caption, :address, photos: [], spot_attributes: [:id, :address]).merge(user_id: current_user.id)
+    params.require(:post).permit(:caption, :address, photos: [], spot_attributes: %i[id address]).merge(user_id: current_user.id)
   end
 end
