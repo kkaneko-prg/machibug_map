@@ -39,4 +39,6 @@ ja:
       title: post
     create:
       success: '街バグの投稿が完了しました'
-      fail: '投稿に失敗しました'      
+      fail: '投稿に失敗しました'  
+    index:
+      title: photos    
