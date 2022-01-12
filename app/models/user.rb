@@ -20,4 +20,8 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   # Userを削除したときに紐付いているcommentsも同時に削除する。
   has_many :comments, dependent: :destroy
+
+  def own?(object)
+    id == object.user_id
+  end
 end
