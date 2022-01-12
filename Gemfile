@@ -27,13 +27,12 @@ gem 'mini_magick'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
-gem 'bulma-rails'
-gem 'sorcery'
-gem 'rails-i18n'
-gem 'dotenv-rails'
-
-# Validation
 gem 'active_storage_validations'
+gem 'bulma-rails'
+gem 'dotenv-rails'
+gem 'font-awesome-sass'
+gem 'rails-i18n'
+gem 'sorcery'
 
 group :development, :test do
   # Debugger
