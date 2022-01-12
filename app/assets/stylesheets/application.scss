@@ -15,8 +15,12 @@
  */
 
 
- // bulma
-@import "bulma";
+ // BULMA
+@import 'bulma';
+
+// Font Awesome
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
 
 // SCSS
 @import 'header';
