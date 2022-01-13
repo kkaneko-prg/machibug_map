@@ -1,0 +1,21 @@
+<tr>
+  <td style="width: 650px">
+    <%= comment.user.name %>
+    <div>
+      <%= simple_format(comment.body) %>
+    </div>
+  </td>
+
+  <% if current_user.own?(comment) %>
+    <td>
+      <%= link_to "#", method: :get do %>
+        <%= icon 'fa', 'pen' %>
+      <% end %>
+      <%= link_to "#", method: :delete do %>
+        <%= icon 'fas', 'trash' %>
+      <% end %>
+    </td>
+  <% else %>
+    <td></td>
+  <% end %>
+</tr>
