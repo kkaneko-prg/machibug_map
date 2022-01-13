@@ -1,9 +1,7 @@
 <tr>
   <td style="width: 650px">
     <%= comment.user.name %>
-    <div>
-      <%= simple_format(comment.body) %>
-    </div>
+    <%= simple_format(comment.body) %>
   </td>
 
   <% if current_user.own?(comment) %>
