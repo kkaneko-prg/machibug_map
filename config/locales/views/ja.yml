@@ -39,10 +39,22 @@ ja:
       title: post
     create:
       success: '街バグの投稿が完了しました'
-      fail: '投稿に失敗しました'  
+      fail: '投稿に失敗しました' 
+    update:
+      success: '投稿内容を更新しました'
+      fail: '投稿内容の更新に失敗しました'
+    destroy:
+      success: '投稿を削除しました'
+      fail: '投稿の削除に失敗しました'
     index:
       title: photos    
   comments:
     create:
       success: 'コメントの投稿が完了しました'
       fail: 'コメントの投稿に失敗しました'
+    update:
+      success: コメントを更新しました"
+      fail: 'コメントの更新に失敗しました'
+    destroy:
+      success: 'コメントを削除しました'
+      fail: 'コメントの削除に失敗しました'
