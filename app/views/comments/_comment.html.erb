@@ -1,17 +1,15 @@
 <tr>
   <td style="width: 650px">
     <%= comment.user.name %>
-    <div>
-      <%= simple_format(comment.body) %>
-    </div>
+    <%= simple_format(comment.body) %>
   </td>
 
   <% if current_user.own?(comment) %>
     <td>
-      <%= link_to "#", method: :get do %>
+      <%= link_to("#", { method: :get, class: 'linkcolor' }) do %>
         <%= icon 'fa', 'pen' %>
       <% end %>
-      <%= link_to "#", method: :delete do %>
+      <%= link_to("#", { method: :delete, data: { confirm: '削除してよろしいですか？' }, class: 'linkcolor' }) do %>
         <%= icon 'fas', 'trash' %>
       <% end %>
     </td>
