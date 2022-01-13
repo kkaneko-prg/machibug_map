@@ -18,7 +18,7 @@
           <button class="button is-dark"><%= link_to('edit profile', edit_profile_path, class: 'linkwhite') %></button>
         </div>
         <div class="has-text-centered mt-2">
-          <%= link_to('退会', users_path(current_user), { method: :delete, data: { confirm: '退会してもよろしいですか?' }, class: 'linkcolor'}) %>
+          <%= link_to('退会', user_path(current_user), { method: :delete, data: { confirm: '退会してもよろしいですか?' }, class: 'linkcolor'}) %>
         </div>
       </div> 
     </div>
