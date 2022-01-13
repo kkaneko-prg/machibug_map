@@ -1,5 +1,7 @@
 <section class="section">
   <div class="container">
+    <div class="columns is-mobile is-vcentered">
+      <div class="column is-half is-offset-one-quarter">
     <p>
       <% if @post.photos.attached? %>
         <% @post.photos.each do |photo| %>
@@ -19,7 +21,13 @@
       <strong>Address:</strong>
       <%= @post.spot.address %>
     </p>
+    <!-- コメントの投稿フォーム -->
+    <%= render 'comments/form', { post: @post, comment: @comment } %>
+    <!-- 投稿されたコメントの表示エリア -->
+    <%= render 'comments/comments', { comments: @comments } %>
     <%= link_to 'Edit', edit_post_path(@post) %> |
     <%= link_to 'Back', posts_path %>
+    </div> 
+    </div>
   </div>
 </section>

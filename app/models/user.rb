@@ -16,5 +16,12 @@ class User < ApplicationRecord
   validates :password, confirmation: true, length: { minimum: 8 }, format: { with: VALID_PASSWORD_REGEX, message: '半角英数字のみ使用可能です' }, if: -> { new_record? || changes[:crypted_password] }
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
 
-  has_many :posts
+  # Userを削除したときに紐付いているpostsも同時に削除する。
+  has_many :posts, dependent: :destroy
+  # Userを削除したときに紐付いているcommentsも同時に削除する。
+  has_many :comments, dependent: :destroy
+
+  def own?(object)
+    id == object.user_id
+  end
 end

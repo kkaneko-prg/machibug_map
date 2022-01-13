@@ -2,6 +2,7 @@ ja:
   activerecord:
     models:
       user: 'ユーザー'
+      comment: 'コメント'
     attributes:
       user:
         name: 'ニックネーム'
@@ -10,3 +11,5 @@ ja:
         password_confirmation: 'パスワード（確認）'
       post:
         photos: '画像ファイル'
+      comment:
+        body: 'コメント'

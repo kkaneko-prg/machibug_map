@@ -8,4 +8,6 @@ class Post < ApplicationRecord
   # コントローラでの記述と組み合わせて使う
   accepts_nested_attributes_for :spot
   has_many_attached :photos
+  # postのレコードを削除したときに紐付いているcommentsも同時に削除する
+  has_many :comments, dependent: :destroy
 end

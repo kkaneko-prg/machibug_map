@@ -42,3 +42,7 @@ ja:
       fail: '投稿に失敗しました'  
     index:
       title: photos    
+  comments:
+    create:
+      success: 'コメントの投稿が完了しました'
+      fail: 'コメントの投稿に失敗しました'
