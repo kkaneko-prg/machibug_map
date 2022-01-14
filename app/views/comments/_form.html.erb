@@ -1,12 +1,9 @@
-<div class="container mt-5">
-  <%= form_with model: comment, url: [post, comment], local: true do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-    <div class="field">
-      <%= f.label :body, class: 'label', class: 'has-text-weight-light' %>
-      <%= f.text_area :body, class: 'textarea', placeholder: 'コメントを入力してください。' %>
-    </div>
-    <div>
-      <%= f.submit (t 'defaults.register'), class: 'button is-dark' %>
-    </div>
-  <% end %>
-</div>
+<%= form_with model: comment, url: [post, comment], local: true do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.text_area :body, class: 'textarea', placeholder: "コメントを追加…" %>
+  </div>
+  <div>
+    <%= f.submit (t 'defaults.register'), class: 'button is-dark' %>
+  </div>
+<% end %>
