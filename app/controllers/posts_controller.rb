@@ -18,7 +18,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      redirect_to posts_url, success: t('.success')
+      redirect_to photos_url, success: t('.success')
     else
       flash.now[:danger] = t('.fail')
       render :new
@@ -42,7 +42,7 @@ class PostsController < ApplicationController
   def destroy
     @post = current_user.posts.find(params[:id])
     @post.destroy
-    redirect_to posts_url, success: t('.success')
+    redirect_to photos_url, success: t('.success')
   end
 
   private
