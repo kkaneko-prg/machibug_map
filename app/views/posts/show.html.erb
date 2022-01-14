@@ -1,53 +1,53 @@
 <section class="section">
   <div class="container">
-  <div class="columns is-mobile is-vcentered">
-  <div class="column is-half is-offset-one-quarter">
-<article class="media">
-  <figure class="media-left">
-  </figure>
-  <div class="media-content">
-    <div class="content">
-      <p>
-        <% if @post.photos.attached? %>
-          <% @post.photos.each do |photo| %>
-          <%= image_tag photo.variant(resize_to_limit: [300, 200]) %>
-        <% end %>
-        <% end %>
-      </p>
-      <p>
-        <strong><%= @post.user.name %></strong>
-        <br>
-          <%= @post.caption %>
-        <br>
-        <small>
-          <% if current_user.own?(@post) %>
-            <%= link_to(edit_post_path(@post), { method: :get, class: 'linkcolor' }) do %>
-              <%= icon 'fa', 'pen' %>
-            <% end %>
-            <%= link_to(@post, { method: :delete, data: { confirm: '削除してよろしいですか？' }, class: 'linkcolor' }) do %>
-              <%= icon 'fas', 'trash' %>
-            <% end %>
-          <% end %>
-          <a>Like</a>
-          <a>Reply</a>
-          3 hrs
-        </small>
-      </p>
+    <div class="columns is-mobile is-vcentered">
+      <div class="column is-half is-offset-one-quarter">
+        <!-- 投稿内容の表示エリア -->
+        <article class="media">
+          <figure class="media-left">
+          </figure>
+          <div class="media-content">
+            <div class="content">
+              <p>
+                <% if @post.photos.attached? %>
+                  <% @post.photos.each do |photo| %>
+                    <%= image_tag photo.variant(resize_to_limit: [300, 200]) %>
+                  <% end %>
+                <% end %>
+              </p>
+              <p>
+                <strong><%= @post.user.name %></strong>
+                <br>
+                <%= @post.caption %>
+                <br>
+                <small>
+                  <% if current_user.own?(@post) %>
+                    <%= link_to(edit_post_path(@post), { method: :get, class: 'linkcolor' }) do %>
+                      <%= icon 'fa', 'pen' %>
+                    <% end %>
+                    <%= link_to(@post, { method: :delete, data: { confirm: '削除してよろしいですか？' }, class: 'linkcolor' }) do %>
+                      <%= icon 'fas', 'trash' %>
+                    <% end %>
+                  <% end %>
+                  <a>Like</a>
+                  <a>Reply</a>
+                  3 hrs
+                </small>
+              </p>
+            </div>
+            <!-- 投稿されたコメントの表示エリア -->
+            <%= render 'comments/comments', { comments: @comments } %>
+          </div>
+        </article>
+        <!-- コメントの投稿フォーム -->
+        <article class="media">
+          <figure class="media-left">
+          </figure>
+          <div class="media-content">
+            <%= render 'comments/form', { post: @post, comment: @comment } %>
+          </div>
+        </article>
+      </div>
     </div>
-    <!-- 投稿されたコメントの表示エリア -->
-    <%= render 'comments/comments', { comments: @comments } %>
   </div>
-</article>
-
-<article class="media">
-  <figure class="media-left">
-  </figure>
-  <div class="media-content">
-  <!-- コメントの投稿フォーム -->
-  <%= render 'comments/form', { post: @post, comment: @comment } %>
-  </div>
-  </div>
-  </div>
-</article>
-</div>
 </section>
