@@ -21,7 +21,7 @@
                 <%= @post.caption %>
                 <br>
                 <small>
-                  <% if current_user.own?(@post) %>
+                  <% if logged_in? && current_user.own?(@post) %>
                     <%= link_to(edit_post_path(@post), { method: :get, class: 'linkcolor' }) do %>
                       <%= icon 'fa', 'pen' %>
                     <% end %>
@@ -40,11 +40,14 @@
           </div>
         </article>
         <!-- コメントの投稿フォーム -->
+        
         <article class="media">
           <figure class="media-left">
           </figure>
           <div class="media-content">
-            <%= render 'comments/form', { post: @post, comment: @comment } %>
+            <% if logged_in? %>
+              <%= render 'comments/form', { post: @post, comment: @comment } %>
+            <% end %>
           </div>
         </article>
       </div>

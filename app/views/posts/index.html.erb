@@ -15,7 +15,7 @@
         <td><%= post.user.name %></td>
         <td><%= link_to(post.caption, post, {class: "linkcolor"}) %></td>
         <td><%= post.created_at %></td>
-        <% if current_user.own?(post) %>
+        <% if logged_in? && current_user.own?(post) %>
           <td>
             <%= link_to(edit_post_path(post), { method: :get, class: 'linkcolor' }) do %>
               <%= icon 'fa', 'pen' %>

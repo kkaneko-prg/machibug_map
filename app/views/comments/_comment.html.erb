@@ -7,7 +7,7 @@
         <strong><%= comment.user.name %></strong>
         <%= simple_format(comment.body) %>
         <small>
-          <% if current_user.own?(comment) %>
+          <% if logged_in? && current_user.own?(comment) %>
             <%= link_to("#", { method: :get, class: 'linkcolor' }) do %>
               <%= icon 'fa', 'pen' %>
             <% end %>
