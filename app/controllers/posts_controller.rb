@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
+  skip_before_action :require_login, only: %i[index show]
+
   def index
-    # @posts = Post.all.order(created_at: :desc)
+    # N+1問題解消のため、postsテーブルからデータを取得する際に、関連するusersテーブルのデータも取得する。
     @posts = Post.includes(:user).order(created_at: :desc)
   end
 
