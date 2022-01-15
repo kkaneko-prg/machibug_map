@@ -1,0 +1,7 @@
+<% if logged_in? && current_user.already_liked?(@post) %>
+  <%= render 'likes/unlike', { post: @post } %>
+<% else %>
+  <%= render 'likes/like', { post: @post } %>
+<% end %>
+<%= @post.likes.count %>
+Like
