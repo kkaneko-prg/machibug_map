@@ -1,4 +1,5 @@
 class LikesController < ApplicationController
+  skip_before_action :require_login, only: %i[create]  
   # いいねをする
   def create
     if logged_in?
@@ -6,7 +7,8 @@ class LikesController < ApplicationController
       # 直前のページに戻れなかったら、root_pathへ飛ぶ。
       redirect_back fallback_location: root_path
     else
-      redirect_back fallback_location: login_path, alert: 'ログインが必要です'
+      redirect_back fallback_location: root_path
+      flash[:alert] = "ログインが必要です。"
     end
   end
 
