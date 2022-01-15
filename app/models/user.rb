@@ -16,12 +16,19 @@ class User < ApplicationRecord
   validates :password, confirmation: true, length: { minimum: 8 }, format: { with: VALID_PASSWORD_REGEX, message: '半角英数字のみ使用可能です' }, if: -> { new_record? || changes[:crypted_password] }
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
 
-  # Userを削除したときに紐付いているpostsも同時に削除する。
-  has_many :posts, dependent: :destroy
-  # Userを削除したときに紐付いているcommentsも同時に削除する。
+  # dependent: :destroyにより、Userを削除したときに紐付いているposts/comments/likesも同時に削除できる。
+  has_many :posts,    dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :likes,    dependent: :destroy
+  # userがどの投稿をいいねしているのかを取得できる。
+  has_many :liked_posts, through: :likes, source: :post
 
   def own?(object)
     id == object.user_id
+  end
+
+  # ユーザーが投稿に対して、すでにいいねをしているのかどうかを判定する。
+  def already_liked?(post)
+    likes.exists?(post_id: post.id)
   end
 end

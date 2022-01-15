@@ -1,0 +1,17 @@
+<% if logged_in? %>
+  <% if current_user.already_liked?(@post) %>
+    <%= link_to post_like_path(@post), method: :delete do %>
+      <%= image_tag 'likebugchan.png', size: '40x80' %>
+    <% end %>
+  <% else %>
+    <%= link_to post_likes_path(@post), method: :post do %>
+      <%= image_tag 'unlikebugchan.png', size: '40x80' %>
+    <% end %>
+  <% end %>
+<% else %>
+  <%= link_to post_likes_path(@post), method: :post do %>
+    <%= image_tag 'unlikebugchan.png', size: '40x80' %>
+  <% end %>  
+<% end %>
+<%= @post.likes.count %>
+Like

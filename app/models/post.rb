@@ -8,6 +8,9 @@ class Post < ApplicationRecord
   # コントローラでの記述と組み合わせて使う
   accepts_nested_attributes_for :spot
   has_many_attached :photos
-  # postのレコードを削除したときに紐付いているcommentsも同時に削除する
+  # dependent: :destroyにより、postのレコードを削除したときに紐付いているcomments/likesも同時に削除する
   has_many :comments, dependent: :destroy
+  has_many :likes,    dependent: :destroy
+  # 投稿が誰にいいねされているのかを取得できる。
+  has_many :liked_users, through: :likes, source: :user
 end
