@@ -7,6 +7,7 @@
         <strong><%= comment.user.name %></strong>
         <%= simple_format(comment.body) %>
         <small>
+          <%= comment.created_at.strftime("%Y-%m-%d %H:%M") %>
           <% if logged_in? && current_user.own?(comment) %>
             <%= link_to("#", { method: :get, class: 'linkcolor' }) do %>
               <%= icon 'fa', 'pen' %>
