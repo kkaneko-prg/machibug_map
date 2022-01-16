@@ -1,0 +1,7 @@
+<%= link_to likes_path(post_id: post.id),id:"js-like-button-for-post-#{post.id}", class: 'linkcolor', method: :post, remote: true do %>
+  <%= image_tag 'likebugchan.png', size: '40x80' %>
+  <%= post.likes.count %>
+  Like
+<% end %>
+
+
