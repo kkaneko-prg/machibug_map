@@ -1,5 +1,5 @@
-<% if logged_in? && current_user.already_liked?(@post) %>
-  <%= render 'likes/unlike', { post: @post } %>
+<% if logged_in? && current_user.already_liked?(post) %>
+  <%= render 'posts/unlike', { post: post } %>
 <% else %>
-  <%= render 'likes/like', { post: @post } %>
+  <%= render 'posts/like', { post: post } %>
 <% end %>
