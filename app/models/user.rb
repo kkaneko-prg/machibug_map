@@ -17,7 +17,7 @@ class User < ApplicationRecord
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
 
   # dependent: :destroyにより、Userを削除したときに紐付いているposts/comments/likesも同時に削除できる。
-  has_many :posts,    dependent: :destroy
+  has_many :posts,    dependent: :destroy # @user.posts
   has_many :comments, dependent: :destroy
   has_many :likes,    dependent: :destroy
   # userがどの投稿をいいねしているのかを取得できる。
