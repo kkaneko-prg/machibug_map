@@ -1,0 +1,5 @@
+<%= link_to like_path(current_user.likes.find_by(post_id: post.id)), id:"js-like-button-for-post-#{post.id}", class: 'linkcolor', method: :delete, remote: true do %>
+  <%= image_tag 'unlikebugchan.png', size: '40x80' %>
+  <%= post.likes.count %>
+  Like
+<% end %>

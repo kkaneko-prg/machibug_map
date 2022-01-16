@@ -9,8 +9,9 @@ Rails.application.routes.draw do
 
   resources :posts, only: %i[new create edit update destroy show] do
     resources :comments, only: %i[create], shallow: true
-    resources :likes, only: %i[create destroy]
   end
+
+  resources :likes, only: %i[create destroy]
   resources :spots, only: %i[index]
   resources :users, only: %i[new create destroy]
   resource  :profile, only: %i[show edit update]
