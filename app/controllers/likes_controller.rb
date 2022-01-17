@@ -16,4 +16,4 @@ class LikesController < ApplicationController
     @post = current_user.likes.find(params[:id]).post
     current_user.liked_posts.destroy(@post)
   end
-end    
+end
