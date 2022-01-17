@@ -1,5 +1,5 @@
 class LikesController < ApplicationController
-  skip_before_action :require_login, only: %i[create]  
+  skip_before_action :require_login, only: %i[create]
   # いいねをする
   def create
     if logged_in?
