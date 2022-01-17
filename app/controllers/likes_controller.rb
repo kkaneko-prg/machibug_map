@@ -6,8 +6,8 @@ class LikesController < ApplicationController
       @post = Post.find(params[:post_id])
       current_user.likes.create(post_id: @post.id)
     else
-     redirect_back fallback_location: root_path
-     flash[:alert] = "ログインが必要です。"
+      redirect_back fallback_location: root_path
+      flash[:alert] = "ログインが必要です。"
     end
   end
 
