@@ -1,7 +1,6 @@
-<%= form_with model: comment, url: [post, comment], local: true do |f| %>
-<%= render 'shared/error_messages', object: f.object %>
+<%= form_with model: comment, url: [post, comment], id: 'new_comment' do |f| %>
   <div class="field">
-    <%= f.text_area :body, class: 'textarea', placeholder: "コメントを追加…" %>
+    <%= f.text_area :body, class: 'textarea', id: 'js-new-comment-body', placeholder: "コメントを追加…" %>
   </div>
   <div>
     <%= f.submit (t 'defaults.register'), class: 'button is-dark' %>
