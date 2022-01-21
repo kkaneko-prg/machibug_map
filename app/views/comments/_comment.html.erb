@@ -9,11 +9,8 @@
         <small>
           <%= comment.created_at.strftime("%Y-%m-%d %H:%M") %>
           <% if logged_in? && current_user.own?(comment) %>
-            <%= link_to("#", { method: :get, class: 'linkcolor' }) do %>
-              <%= icon 'fa', 'pen' %>
-            <% end %>
-            <%= link_to("#", { method: :delete, data: { confirm: '削除してよろしいですか？' }, class: 'linkcolor' }) do %>
-              <%= icon 'fas', 'trash' %>
+            <%= link_to '#', class: 'js-delete-comment-button', method: :delete, data: { confirm: '削除しますか？' }, class: 'linkcolor', remote: true do %>
+              <%= icon 'fa', 'trash' %>
             <% end %>
           <% end %>
         </small>
