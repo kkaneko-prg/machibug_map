@@ -1,4 +1,4 @@
-<article class="media">
+<article class="media" id="js-comment-<%= comment.id %>">
   <figure class="media-left">
   </figure>
   <div class="media-content">
@@ -9,7 +9,7 @@
         <small>
           <%= comment.created_at.strftime("%Y-%m-%d %H:%M") %>
           <% if logged_in? && current_user.own?(comment) %>
-            <%= link_to '#', class: 'js-delete-comment-button', method: :delete, data: { confirm: '削除しますか？' }, class: 'linkcolor', remote: true do %>
+            <%= link_to comment_path(comment), class: 'js-delete-comment-button', method: :delete, data: { confirm: '削除しますか？' }, class: 'linkcolor', remote: true do %>
               <%= icon 'fa', 'trash' %>
             <% end %>
           <% end %>

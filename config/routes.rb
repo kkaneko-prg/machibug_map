@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'photos', to: 'posts#index'
 
   resources :posts, only: %i[new create edit update destroy show] do
-    resources :comments, only: %i[create], shallow: true
+    resources :comments, only: %i[create destroy], shallow: true
   end
 
   resources :likes, only: %i[create destroy]
