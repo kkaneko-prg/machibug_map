@@ -1,25 +1,35 @@
 <div class="container">
   <div id='map'></div>
   <script>
-  let map
-
-    function initMap(){
+    function initMap() {
       geocoder = new google.maps.Geocoder()
 
+      //初期表示位置等の記述
       map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 35.68123620000001, lng:139.7671248},
+          center: {lat: 35.7031485, lng: 139.5798087},
           zoom: 12,
       });
 
-      <% @spots.each do |spot| %>
-          (function(){
-          var marker = new google.maps.Marker({
-              position:{lat: <%= spot.latitude %>, lng: <%= spot.longitude %>},
-              map: map,
+      //マーカー表示の記述
+      <% @spots.each do |spot|%>
+        ( function() { 
+          let markerLatLng = new google.maps.LatLng({lat: <%= spot.latitude %>, lng: <%= spot.longitude %>}); // 緯度経度のデータ作成
+          let marker = new google.maps.Marker({ 
+            position: markerLatLng, 
+            map: map 
           });
-          })();
+          //マーカーをクリックしたとき、投稿のキャプションをPOPUP表示
+          let infowindow = new google.maps.InfoWindow({
+            position: markerLatLng,
+            content: "<a href='<%= post_url(spot.post.id) %>' target='_blank'><%= spot.post.caption %></a>"
+          }); //ここで投稿詳細ページへのリンクを表示させる
+          marker.addListener('click', function() {
+            infowindow.open(map, marker);
+          });
+
+       })();
       <% end %>
-      }
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['API_KEY'] %>&callback=initMap" async defer></script>
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['API_KEY'] %>&callback=initMap" async defer></script>
 </div>
