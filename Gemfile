@@ -29,10 +29,13 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'active_storage_validations'
 gem 'bulma-rails'
-gem 'dotenv-rails'
 gem 'font-awesome-sass'
 gem 'rails-i18n'
 gem 'sorcery'
+
+# Google Map関連
+gem 'dotenv-rails'
+gem 'geocoder' # 住所から緯度経度を算出する。
 
 group :development, :test do
   # Debugger
