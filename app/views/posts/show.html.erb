@@ -20,6 +20,10 @@
                 <br>
                 <%= @post.caption %>
                 <br>
+                <strong>Address</strong>
+                <br>
+                <%= @post.spot.address %>
+                <br>
                 <small>
                   <!-- likeのバグちゃん表示エリア -->
                   <%= render 'like_button', { post: @post } %>

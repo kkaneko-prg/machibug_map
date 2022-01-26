@@ -1,9 +1,11 @@
 <% content_for(:title, t('.title')) %>
+<div class="container">
 <table>
   <thead>
     <tr>
       <th>User name</th>
       <th>Caption</th>
+      <th>Address</th>
       <th>Created_at</th>
       <th colspan="3"></th>
     </tr>
@@ -14,6 +16,7 @@
       <tr>
         <td><%= post.user.name %></td>
         <td><%= link_to(post.caption, post, {class: "linkcolor"}) %></td>
+        <td><%= post.spot.address %></td>
         <td><%= post.created_at %></td>
         <% if logged_in? && current_user.own?(post) %>
           <td>
@@ -35,3 +38,4 @@
 <br>
 
 <%= link_to 'New Post', new_post_path %>
+</div>
