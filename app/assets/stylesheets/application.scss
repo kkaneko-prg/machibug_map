@@ -59,7 +59,15 @@ hr {
   color: #FFFFFF;
 }
 
+// mapのスタイル
 #map {
   height: 600px;
   width: 1345px;
+}
+
+// 投稿画面のプレビュー画像のサイズ指定とプレビュー画像を横並びに配置する指定
+#preview {
+  max-height: 200px;
+  max-width: 100px;
+  display: flex;
 }
