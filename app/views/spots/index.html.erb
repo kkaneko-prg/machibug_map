@@ -16,7 +16,11 @@
           let markerLatLng = new google.maps.LatLng({lat: <%= spot.latitude %>, lng: <%= spot.longitude %>}); // 緯度経度のデータ作成
           let marker = new google.maps.Marker({ 
             position: markerLatLng, 
-            map: map 
+            map: map,
+            icon: {
+              url: 'https://i.gyazo.com/3500c572ea7b5a3e204d4f8dec4e922f.png', //アイコンのURL
+              scaledSize: new google.maps.Size(70, 70) //サイズ
+              }
           });
           //マーカーをクリックしたとき、投稿のキャプションをPOPUP表示
           let infowindow = new google.maps.InfoWindow({
