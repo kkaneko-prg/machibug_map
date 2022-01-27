@@ -10,7 +10,7 @@
     for (i = 0; i < obj.files.length; i++) {
         let fileReader = new FileReader();
         fileReader.onload = (function (e) {
-            var img = new Image();
+            let img = new Image();
             img.src = e.target.result;
             document.getElementById('preview').appendChild(img);
         });
