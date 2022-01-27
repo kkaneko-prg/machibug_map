@@ -2,9 +2,13 @@
 <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
     <%= f.label :photos, class: 'label', class: 'has-text-weight-light' %><br>
-    <%= f.file_field :photos, direct_upload: true, multiple: true %>
-    <p class="help is-info">必須</p>
+    <%= f.file_field :photos, class: "push", multiple: true, onchange: "loadImage(this);" %>
+    <p class="help is-info">必須(3枚まで)</p>
   </div>
+  <div id="post_images" style="display: none;">
+    <p id="preview"></p>
+  </div>
+  <%= render "loadimage" %>
   <div class="field">
     <%= f.fields_for :spot do |s| %>
       <%= s.label :address, class: 'label', class: 'has-text-weight-light' %>
