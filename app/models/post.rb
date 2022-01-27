@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  validates :photos, attached: { message: 'を選択してください。' }
+  validates :photos, attached: { message: 'を選択してください。' }, limit: { min: 1, max: 3 }
 
   belongs_to :user
   # postのレコードを削除したときに紐付いていたspotを同時に削除
