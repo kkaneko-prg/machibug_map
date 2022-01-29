@@ -19,7 +19,7 @@ class User < ApplicationRecord
   validates :reset_password_token, uniqueness: true, allow_nil: true
 
   # dependent: :destroyにより、Userを削除したときに、紐付いているposts/comments/likesも同時に削除できる。
-  has_many :posts,    dependent: :destroy  # @user.postsが使えるようになる。
+  has_many :posts,    dependent: :destroy # @user.postsが使えるようになる。
   has_many :comments, dependent: :destroy
   has_many :likes,    dependent: :destroy
   # userがどの投稿をいいねしているのかを取得できる。
