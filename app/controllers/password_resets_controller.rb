@@ -1,7 +1,10 @@
 class PasswordResetsController < ApplicationController
   skip_before_action :require_login
 
-  def new; end
+  def new
+    # ログイン中の場合は、root_urlへリダイレクトする。
+    redirect_to root_url if logged_in?
+  end
 
   # パスワードを再設定したい対象のメールアドレスを入力・送信して、リセットの対象を作成する。
   def create
@@ -12,14 +15,14 @@ class PasswordResetsController < ApplicationController
     redirect_to login_path, success: t('.success')
   end
 
-  # パスワードリセット用のメールのURLをクリックして、パスワード再設定フォームから新しいパスワードを入力する。
+  # パスワードリセット用のメールに記載されたURLをクリックして、パスワード再設定フォームから新しいパスワードを入力する。
   def edit
     @token = params[:id]
     @user = User.load_from_reset_password_token(@token)
     not_authenticated if @user.blank?
   end
 
-  # ユーザがパスワード再設定フォーム(editアクション)から、『更新する』ボタンをクリックすることでこのアクションが動いて、パスワードを変更する。
+  # ユーザがパスワード再設定フォーム(editアクション)から、『update』ボタンをクリックすることでこのアクションが動いて、パスワードを変更する。
   def update
     @token = params[:id]
     @user = User.load_from_reset_password_token(@token)
