@@ -29,6 +29,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'active_storage_validations'
 gem 'bulma-rails'
+gem 'config'
 gem 'font-awesome-sass'
 gem 'rails-i18n'
 gem 'sorcery'
@@ -53,6 +54,9 @@ group :development, :test do
   # Test
   gem 'rspec-rails'
   gem 'factory_bot_rails'
+
+  # メール送信テスト用
+  gem 'letter_opener_web', '~> 1.0'
 end
 
 group :development do

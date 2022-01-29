@@ -58,3 +58,13 @@ ja:
     destroy:
       success: 'コメントを削除しました'
       fail: 'コメントの削除に失敗しました'
+  password_resets:
+    new:
+      title: forgot password
+    edit:
+      title: reset password
+    create:
+      success: 'パスワードリセット手順を送信しました'
+    update:
+      success: 'パスワードを変更しました'
+      fail: 'パスワードの変更に失敗しました'

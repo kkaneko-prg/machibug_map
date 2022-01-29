@@ -1,0 +1,29 @@
+<% content_for(:title, t('.title')) %>
+<section class="section">
+  <div class="container">
+    <div class="columns is-mobile is-vcentered">
+      <div class="column is-half is-offset-one-quarter">
+        <h1 class="title has-text-centered"><%= t '.title' %></h1>
+        <%= form_with model: @user, url: password_reset_path(@token), local: true do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+          <div class="field">
+            <%= f.label :email, class: 'label', class: 'has-text-weight-light' %><br>
+            <%= @user.email %>
+          </div>
+          <div class="field">
+            <%= f.label :password, class: 'label', class: 'has-text-weight-light' %>
+            <%= f.password_field :password, class: 'input' %>
+            <p class="help is-info">必須 半角英数8文字以上</p>
+          </div>
+          <div class="field">
+            <%= f.label :password_confirmation, class: 'label', class: 'has-text-weight-light' %>
+            <%= f.password_field :password_confirmation, class: 'input' %>
+          </div>
+          <div class="has-text-centered mt-5">
+            <%= f.submit (t 'defaults.update'), class: 'button is-dark' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
