@@ -1,0 +1,20 @@
+<% content_for(:title, t('.title')) %>
+<section class="section">
+  <div class="container">
+    <div class="columns is-mobile is-vcentered">
+      <div class="column is-half is-offset-one-quarter">
+        <h1 class="title has-text-centered"><%= t '.title' %></h1>
+        <%= form_with url: password_resets_path, local: true do |f| %>
+          <div class="field">
+            <%= f.label :email, class: 'label', class: 'has-text-weight-light' %>
+            <%= f.email_field :email, class: 'input', placeholder: 'machibug@example.com' %>
+            <p class="help is-info">ご登録のメールアドレスを入力してください。</p>
+          </div>
+          <div class="has-text-centered mt-5">
+            <%= f.submit (t 'defaults.register'), class: 'button is-dark' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
