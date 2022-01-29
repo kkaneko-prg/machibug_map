@@ -15,9 +15,11 @@ class User < ApplicationRecord
   # if以降は、ユーザーがパスワード以外のプロフィールを変更する場合に、パスワードの入力を省略できるようにしている。
   validates :password, confirmation: true, length: { minimum: 8 }, format: { with: VALID_PASSWORD_REGEX, message: '半角英数字のみ使用可能です' }, if: -> { new_record? || changes[:crypted_password] }
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
+  # reset_password_tokenカラムが一意であることの制約に加え、allow_nil: trueをつけることでnullを許容している。
+  validates :reset_password_token, uniqueness: true, allow_nil: true
 
-  # dependent: :destroyにより、Userを削除したときに紐付いているposts/comments/likesも同時に削除できる。
-  has_many :posts,    dependent: :destroy # @user.posts
+  # dependent: :destroyにより、Userを削除したときに、紐付いているposts/comments/likesも同時に削除できる。
+  has_many :posts,    dependent: :destroy  # @user.postsが使えるようになる。
   has_many :comments, dependent: :destroy
   has_many :likes,    dependent: :destroy
   # userがどの投稿をいいねしているのかを取得できる。
