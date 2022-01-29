@@ -26,8 +26,8 @@ class PasswordResetsController < ApplicationController
   def update
     @token = params[:id]
     @user = User.load_from_reset_password_token(@token)
-
     return not_authenticated if @user.blank?
+
     # パスワード確認の検証が機能する。
     @user.password_confirmation = params[:user][:password_confirmation]
     # 一時的なトークンをクリアし、パスワードを更新する。
