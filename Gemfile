@@ -29,6 +29,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'active_storage_validations'
 gem 'bulma-rails'
+gem 'config'
 gem 'font-awesome-sass'
 gem 'rails-i18n'
 gem 'sorcery'
