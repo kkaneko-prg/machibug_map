@@ -7,7 +7,7 @@
         <%= form_with model: @user, url: password_reset_path(@token), local: true do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
           <div class="field">
-            <%= f.label :email, class: 'label', class: 'has-text-weight-light' %>
+            <%= f.label :email, class: 'label', class: 'has-text-weight-light' %><br>
             <%= @user.email %>
           </div>
           <div class="field">
