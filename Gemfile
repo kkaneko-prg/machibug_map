@@ -53,6 +53,9 @@ group :development, :test do
   # Test
   gem 'rspec-rails'
   gem 'factory_bot_rails'
+
+  # メール送信テスト用
+  gem 'letter_opener_web', '~> 1.0'
 end
 
 group :development do
