@@ -25,6 +25,9 @@ class User < ApplicationRecord
   # userがどの投稿をいいねしているのかを取得できる。
   has_many :liked_posts, through: :likes, source: :post
 
+  # 一般ユーザー、管理者ユーザー
+  enum role: { general: 0, admin: 1 }
+
   def own?(object)
     id == object.user_id
   end
