@@ -1,4 +1,10 @@
 RailsAdmin.config do |config|
+  config.authenticate_with do
+    # sorceryのbefore filterを使用してユーザーを認証する。
+    require_login
+  end
+  config.current_user_method(&:current_user)
+  config.parent_controller = 'ApplicationController'
 
   ### Popular gems integration
 
