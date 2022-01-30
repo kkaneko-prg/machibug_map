@@ -3,6 +3,9 @@ ja:
     models:
       user: 'ユーザー'
       comment: 'コメント'
+      post: '投稿'
+      spot: '場所'
+      like: 'いいね'
     attributes:
       user:
         name: 'ニックネーム'
