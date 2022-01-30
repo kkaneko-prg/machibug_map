@@ -44,7 +44,7 @@ gem 'rails_admin-i18n'
 gem 'cancancan'
 
 # Google Map関連
-gem 'dotenv-rails' #APIキー等を隠す。
+gem 'dotenv-rails' # APIキー等を隠す。
 gem 'geocoder' # 住所から緯度経度を算出する。
 
 group :development, :test do
