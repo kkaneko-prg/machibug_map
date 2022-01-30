@@ -2,6 +2,8 @@ RailsAdmin.config do |config|
   config.authenticate_with do
     # sorceryのbefore filterを使用してユーザーを認証する。
     require_login
+    # ログイン中のユーザーがアドミン権限がなければ、root_pathへリダイレクトさせる。
+    redirect_to main_app.root_path unless current_user.admin?
   end
   config.current_user_method(&:current_user)
   config.parent_controller = 'ApplicationController'
@@ -15,7 +17,7 @@ RailsAdmin.config do |config|
   # config.current_user_method(&:current_user)
 
   ## == CancanCan ==
-  # config.authorize_with :cancancan
+  config.authorize_with :cancancan
 
   ## == Pundit ==
   # config.authorize_with :pundit
