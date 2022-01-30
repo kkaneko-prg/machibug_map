@@ -4,7 +4,7 @@
     function initMap() {
       geocoder = new google.maps.Geocoder()
 
-      //デザイン
+      // デザイン
       let styles = [
         {
             "featureType": "all",
@@ -260,7 +260,7 @@
         }
     ];
 
-      //初期表示位置等の記述
+      // 初期表示位置等の記述
       map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 35.7031485, lng: 139.5798087},
           zoom: 12,
@@ -270,7 +270,7 @@
       let transitLayer = new google.maps.TransitLayer();
       transitLayer.setMap(map);
 
-      //マーカー表示の記述
+      // マーカー表示の記述
       <% @spots.each do |spot|%>
         ( function() { 
           let markerLatLng = new google.maps.LatLng({lat: <%= spot.latitude %>, lng: <%= spot.longitude %>}); // 緯度経度のデータ作成
@@ -282,15 +282,16 @@
               scaledSize: new google.maps.Size(70, 70) //サイズ
               }
           });
-          //マーカーをクリックしたとき、投稿のキャプションをPOPUP表示
+          // マーカーをクリックしたとき、投稿のキャプションをPOPUP表示
           let infowindow = new google.maps.InfoWindow({
             position: markerLatLng,
             content: "<a href='<%= post_url(spot.post.id) %>' target='_blank'><%= spot.post.caption %></a>"
-          }); //ここで投稿詳細ページへのリンクを表示させる
+          }); // ここで投稿詳細ページへのリンクを表示させる
           marker.addListener('click', function() {
             infowindow.open(map, marker);
+            map.setZoom(15); // クリックされたマーカーにズームする
+            map.setCenter(new google.maps.LatLng({lat: <%= spot.latitude %>, lng: <%= spot.longitude %>})); // クリックされたマーカーをセンターにする
           });
-
        })();
       <% end %>
     }
