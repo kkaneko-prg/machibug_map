@@ -28,20 +28,24 @@ gem 'mini_magick'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'active_storage_validations'
-gem 'bulma-rails'
 gem 'config'
 gem 'font-awesome-sass'
-gem 'rails-i18n'
 gem 'sorcery'
 
-# Google Map関連
-gem 'dotenv-rails' #APIキー等を隠す。
-gem 'geocoder' # 住所から緯度経度を算出する。
+# CSSフレームワーク
+gem 'bulma-rails'
+
+# 国際化対応
+gem 'rails-i18n'
 
 # 管理機能関連
 gem 'rails_admin', '~> 2.0'
 gem 'rails_admin-i18n'
 gem 'cancancan'
+
+# Google Map関連
+gem 'dotenv-rails' #APIキー等を隠す。
+gem 'geocoder' # 住所から緯度経度を算出する。
 
 group :development, :test do
   # Debugger
@@ -56,7 +60,7 @@ group :development, :test do
   gem 'rubocop-rails'
   gem 'rails_best_practices'
 
-  # Test
+  # テスト
   gem 'rspec-rails'
   gem 'factory_bot_rails'
 
