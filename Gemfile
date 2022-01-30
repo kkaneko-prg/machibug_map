@@ -40,6 +40,7 @@ gem 'geocoder' # 住所から緯度経度を算出する。
 
 # 管理機能関連
 gem 'rails_admin', '~> 2.0'
+gem 'rails_admin-i18n'
 
 group :development, :test do
   # Debugger
