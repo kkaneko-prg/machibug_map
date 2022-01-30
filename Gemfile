@@ -35,12 +35,13 @@ gem 'rails-i18n'
 gem 'sorcery'
 
 # Google Map関連
-gem 'dotenv-rails'
+gem 'dotenv-rails' #APIキー等を隠す。
 gem 'geocoder' # 住所から緯度経度を算出する。
 
 # 管理機能関連
 gem 'rails_admin', '~> 2.0'
 gem 'rails_admin-i18n'
+gem 'cancancan'
 
 group :development, :test do
   # Debugger
