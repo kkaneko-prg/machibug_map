@@ -38,6 +38,9 @@ gem 'sorcery'
 gem 'dotenv-rails'
 gem 'geocoder' # 住所から緯度経度を算出する。
 
+# 管理機能関連
+gem 'rails_admin', '~> 2.0'
+
 group :development, :test do
   # Debugger
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
