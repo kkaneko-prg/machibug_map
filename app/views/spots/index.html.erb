@@ -285,7 +285,7 @@
           // マーカーをクリックしたとき、投稿のキャプションをPOPUP表示
           let infowindow = new google.maps.InfoWindow({
             position: markerLatLng,
-            content: "<a href='<%= post_url(spot.post.id) %>' target='_blank' rel='noopener noreferrer'><%= spot.post.caption %></a>"
+            content: '<%= link_to spot.post.caption, post_url(spot.post.id), target: :_blank, rel: 'noopener noreferrer' %>'
           }); // ここで投稿詳細ページへのリンクを表示させる
           marker.addListener('click', function() {
             infowindow.open(map, marker);
