@@ -3,19 +3,19 @@
   <div class="container">
     <div class="columns is-mobile is-vcentered">
       <div class="column is-half is-offset-one-quarter">
-        <h1 class="title has-text-centered"><%= t '.title' %></h1>
-        <table class="table has-centered">
-          <tr>
-            <th>email address</th>
-            <td><%= current_user.email %></td>
-          </tr>
-          <tr>
-            <th>name</th>
-            <td><%= current_user.name %></td>
-          </tr>
-        </table>
-        <div class="has-text-centered mt-2">
-          <button class="button is-dark"><%= link_to('edit profile', edit_profile_path, class: 'linkwhite') %></button>
+        <h1 class="title has-text-centered mb-6"><%= t '.title' %></h1>
+        <div  id="backcolor" class="has-text-centered p-6">
+          <strong>Nickname</strong>
+          <br>
+          <%= current_user.name %>
+          <br>
+          <br>
+          <strong>Email address</strong>
+          <br>
+          <%= current_user.email %>
+        </div>
+        <div class="has-text-centered mt-6">
+          <button class="button is-dark"><%= link_to('Edit profile', edit_profile_path, class: 'linkwhite') %></button>
         </div>
         <div class="has-text-centered mt-2">
           <%= link_to('退会', user_path(current_user), { method: :delete, data: { confirm: '退会してもよろしいですか?' }, class: 'linkcolor'}) %>
