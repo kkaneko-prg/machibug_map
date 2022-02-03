@@ -6,6 +6,15 @@ ja:
     post: Post
     update: Update
     edit: Edit
+  static_pages:
+    about:
+      title: 'とは？'
+    howto:
+      title: '使い方'
+    privacy:
+      title: 'プライバシーポリシー'
+    terms:
+      title: '利用規約'
   users:
     new:
       title: Sign up
