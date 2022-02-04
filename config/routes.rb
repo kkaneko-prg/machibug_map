@@ -9,6 +9,10 @@ Rails.application.routes.draw do
 
   get 'photos', to: 'posts#index'
 
+  get 'about', to: 'static_pages#about'
+  get 'terms', to: 'static_pages#terms'
+  get 'privacy', to: 'static_pages#privacy'
+
   resources :posts, only: %i[new create edit update destroy show] do
     resources :comments, only: %i[create destroy], shallow: true
   end
