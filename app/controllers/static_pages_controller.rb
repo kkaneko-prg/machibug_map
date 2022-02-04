@@ -3,9 +3,6 @@ class StaticPagesController < ApplicationController
   # とは？
   def about; end
 
-  # 使い方
-  def howto; end
-
   # ご利用規約
   def terms; end
 
