@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   get 'photos', to: 'posts#index'
 
   get 'about', to: 'static_pages#about'
-  get 'howto', to: 'static_pages#howto'
   get 'terms', to: 'static_pages#terms'
   get 'privacy', to: 'static_pages#privacy'
 
