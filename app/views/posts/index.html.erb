@@ -1,41 +1,17 @@
 <% content_for(:title, t('.title')) %>
 <div class="container">
-<table>
-  <thead>
-    <tr>
-      <th>User name</th>
-      <th>Caption</th>
-      <th>Address</th>
-      <th>Created_at</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+  <figure>
     <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.user.name %></td>
-        <td><%= link_to(post.caption, post, {class: "linkcolor"}) %></td>
-        <td><%= post.spot.address %></td>
-        <td><%= post.created_at %></td>
-        <% if logged_in? && current_user.own?(post) %>
-          <td>
-            <%= link_to(edit_post_path(post), { method: :get, class: 'linkcolor' }) do %>
-              <%= icon 'fa', 'pen' %>
-            <% end %>
-          </td>
-          <td>
-            <%= link_to(post, { method: :delete, data: { confirm: '削除してよろしいですか？' }, class: 'linkcolor' })do %>
-              <%= icon 'fas', 'trash' %>
-            <% end %>
-          </td>
-        <% end %>  
-      </tr>
+      <% post.photos.each do |photo| %>
+        <%= link_to post do %>
+          <%= image_tag(photo) %>
+          <figcaption>
+            <%= post.caption %><br>
+            <i class="far fa-user"></i>
+            <%= post.user.name %>
+          </figcaption>
+        <% end %>
+      <% end %>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Post', new_post_path %>
+  </figure>
 </div>
