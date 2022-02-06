@@ -104,6 +104,10 @@ figcaption {
   cursor: pointer;
 }
 
+.navbar-item #open.hide {
+  display: none;
+}
+
 // ハンバーガーメニューの三をクリックした時のスタイル調整
 .overlay {
   position: fixed;
@@ -117,6 +121,11 @@ figcaption {
   padding: 64px;
   opacity: 0;
   pointer-events: none;
+}
+
+.overlay.show {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 // ハンバーガーメニューの×印に関するスタイル調整
@@ -137,9 +146,4 @@ figcaption {
 
 .overlay li {
   margin-top: 24px;
-}
-
-.overlay.show li {
-  opacity: 1;
-  transform: none;
 }
