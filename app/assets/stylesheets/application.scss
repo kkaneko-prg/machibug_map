@@ -121,6 +121,7 @@ figcaption {
   padding: 64px;
   opacity: 0;
   pointer-events: none;
+  transition: opacity .6s;
 }
 
 .overlay.show {
