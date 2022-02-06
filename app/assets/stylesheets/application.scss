@@ -113,4 +113,33 @@ figcaption {
   left: 0;
   z-index: 999;
   background: rgba(255, 255, 255, 0.95);
+  text-align: center;
+  padding: 64px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+// ハンバーガーメニューの×印に関するスタイル調整
+.overlay #close {
+  position: absolute;
+  top: 48px;
+  right: 36px;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+// ハンバーガーメニュー内のリストのスタイル調整
+.overlay ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.overlay li {
+  margin-top: 24px;
+}
+
+.overlay.show li {
+  opacity: 1;
+  transform: none;
 }
