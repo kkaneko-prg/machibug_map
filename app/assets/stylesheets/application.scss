@@ -147,4 +147,25 @@ figcaption {
 
 .overlay li {
   margin-top: 24px;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .3s, transform .3s;
+}
+
+.overlay.show li {
+  opacity: 1;
+  transform: none;
+}
+
+// ハンバーガーメニュー内のリストが順番に遅れて表示されるように指定
+.overlay.show li:nth-child(1) {
+  transition-delay: .1s;
+}
+
+.overlay.show li:nth-child(2) {
+  transition-delay: .2s;
+}
+
+.overlay.show li:nth-child(3) {
+  transition-delay: .3s;
 }
