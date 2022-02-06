@@ -1,17 +1,19 @@
 <% content_for(:title, t('.title')) %>
-<div class="container">
-  <figure>
-    <% @posts.each do |post| %>
-      <% post.photos.each do |photo| %>
-        <%= link_to post do %>
-          <%= image_tag(photo) %>
-          <figcaption>
-            <%= post.caption %><br>
-            <i class="far fa-user"></i>
-            <%= post.user.name %>
-          </figcaption>
+<section class="section">
+  <div class="container">
+    <figure>
+      <% @posts.each do |post| %>
+        <% post.photos.each do |photo| %>
+          <%= link_to post do %>
+            <%= image_tag(photo) %>
+            <figcaption>
+              <%= post.caption %><br>
+              <i class="far fa-user"></i>
+              <%= post.user.name %>
+            </figcaption>
+          <% end %>
         <% end %>
       <% end %>
-    <% end %>
-  </figure>
-</div>
+    </figure>
+  </div>
+</section>
