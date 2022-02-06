@@ -25,7 +25,38 @@
         <div class="navbar-item">
           <%= link_to((t 'defaults.login'), login_path, {class: 'linkcolor'}) %>
         </div>
+        <div class="navbar-item">
+          <span class="material-icons" id="open">menu</span>
+        <div>
+        <div class="overlay">
+          <span class="material-icons" id="close">close</span>
+          <nav>
+            <ul>
+              <li><%= link_to('Menu', '#', {class: 'linkcolor'}) %></li>
+              <li><%= link_to('Menu', '#', {class: 'linkcolor'}) %></li>
+              <li><%= link_to('Menu', '#', {class: 'linkcolor'}) %></li>
+            </ul>
+          </nav>
+        </div>
       </div>
     </div>
   </nav>
 </header>
+
+<script>
+{
+  const open = document.getElementById('open');
+  const overlay = document.querySelector('.overlay');
+  const close = document.getElementById('close');
+
+  open.addEventListener('click', () => {
+    overlay.classList.add('show');
+    open.classList.add('hide');
+  });
+
+  close.addEventListener('click', () => {
+    overlay.classList.remove('show');
+    open.classList.remove('hide');
+  });
+}
+</script>
