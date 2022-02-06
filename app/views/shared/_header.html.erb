@@ -23,6 +23,9 @@
           <%= link_to((t 'defaults.post'), new_post_path, {class: 'linkcolor'}) %>
         </div>
         <div class="navbar-item">
+          <%= link_to((t 'profiles.show.title'), profile_path, {class: 'linkcolor'}) %>
+        </div>
+        <div class="navbar-item">
           <%= link_to((t 'defaults.logout'), logout_path, { method: :delete, data: { confirm: 'ログアウトしますか？' }, class: 'linkcolor'}) %>
         </div>
         <div class="navbar-item">
