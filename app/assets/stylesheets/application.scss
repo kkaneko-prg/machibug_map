@@ -97,3 +97,9 @@ figcaption {
   text-align: center;
   margin: 0;
 }
+
+// ハンバーガーメニューの三印に関するスタイル調整
+.navbar-item #open {
+  font-size: 32px;
+  cursor: pointer;
+}
