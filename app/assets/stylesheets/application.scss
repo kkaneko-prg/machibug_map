@@ -15,7 +15,7 @@
  */
 
 
- // BULMA
+// BULMA
 @import 'bulma';
 
 // Font Awesome
@@ -23,46 +23,26 @@
 @import 'font-awesome';
 
 // SCSS
-@import 'header';
-@import 'before_login_header';
+@import 'header_footer';
 
 // すべてのbodyに適用
 body {
   color: #707070;
   background-color: #F8F8F8;
   font-family: 'Zen Maru Gothic', sans-serif;
+  margin: 0;
 }
 
-// 2箇所のhrに適用
-hr {
-  height: 1px;
-  width: 95%;
-  margin: auto;
-  border: none;
-  background-color: #707070;
+// mainタグ内の要素の最低の高さを設定
+main {
+  min-height: 600px;
 }
 
-// リンクが青色にならないように色を指定(すべてのリンクに適用)
-.linkcolor {
-  text-decoration: none;
-  color: #707070; 
-}
-
-// リンクが青色にならないように色を指定(プロフィール画面のボタンに適用)
-.linkwhite {
-  text-decoration: none;
-  color: #FFFFFF; 
-}
-
-// マウスオーバーした際に、リンク色が変わらないように色を指定(プロフィール画面のボタンに適用)
-.linkwhite:hover {
-  color: #FFFFFF;
-}
-
-// mapのスタイル
-#map {
-  height: 600px;
-  width: 1345px;
+// ヘッダー上と右端に謎の余白ができてしまうのを、以下の記述で回避
+#wrapper {
+  width:100%;
+  height: 100%;
+  overflow:hidden;
 }
 
 // 投稿画面のプレビュー画像のサイズ指定とプレビュー画像を横並びに配置する指定
@@ -77,95 +57,18 @@ hr {
   background-color: #FFF;
 }
 
-// 写真一覧ページの写真部分のCSS指定
-figure {
-  position: relative;
-  display: flex;
-  flex-flow: column;
-  max-width: 600px;
-  margin: 0 auto;
+// 【メディアクエリ】 タブレット：1024px以下の設定
+@media only screen and (max-width:1024px) {
+
 }
 
-// 写真一覧ページのキャプション部分のCSS指定
-figcaption {
-  position: absolute;
-  width: 100%;
-  transform: translate(0, -108%);
-  background-color:  rgba(0, 0, 0, .5);
-  color: #fff;
-  padding: 10px;
-  text-align: center;
-  margin: 0;
-}
+// 【メディアクエリ】 スマートフォン：599px以下の設定
+@media only screen and (max-width:599px) {
+  body {
+    font-size: 10px;
+  }
 
-// ハンバーガーメニューの三印に関するスタイル調整
-.navbar-item #open {
-  font-size: 32px;
-  cursor: pointer;
-}
-
-.navbar-item #open.hide {
-  display: none;
-}
-
-// ハンバーガーメニューの三をクリックした時のスタイル調整
-.overlay {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  z-index: 999;
-  background: rgba(255, 255, 255, 0.95);
-  text-align: center;
-  padding: 64px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .6s;
-}
-
-.overlay.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-// ハンバーガーメニューの×印に関するスタイル調整
-.overlay #close {
-  position: absolute;
-  top: 48px;
-  right: 36px;
-  font-size: 32px;
-  cursor: pointer;
-}
-
-// ハンバーガーメニュー内のリストのスタイル調整
-.overlay ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.overlay li {
-  margin-top: 24px;
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity .3s, transform .3s;
-}
-
-.overlay.show li {
-  opacity: 1;
-  transform: none;
-}
-
-// ハンバーガーメニュー内のリストが順番に遅れて表示されるように指定
-.overlay.show li:nth-child(1) {
-  transition-delay: .1s;
-}
-
-.overlay.show li:nth-child(2) {
-  transition-delay: .2s;
-}
-
-.overlay.show li:nth-child(3) {
-  transition-delay: .3s;
+  main {
+    min-height: 600px;
+  }
 }
