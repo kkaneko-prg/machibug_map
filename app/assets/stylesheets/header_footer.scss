@@ -10,3 +10,19 @@ hr {
   border: none;
   background-color: #707070;
 }
+
+// 【メディアクエリ】 タブレット：1024px以下の設定
+@media only screen and (max-width:1024px) {
+  hr {
+    height: 1px;
+    width: 100%;
+    margin: auto;
+    border: none;
+    background-color: #707070;
+  }
+}
+
+// 【メディアクエリ】 スマートフォン：599px以下の設定
+@media only screen and (max-width:599px) {
+
+}
