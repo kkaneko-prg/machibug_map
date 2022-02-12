@@ -16,19 +16,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
     <%= favicon_link_tag('favicon.ico') %>
   </head>
-
   <body>
-    <% if logged_in? %>
-      <%= render 'shared/header' %>
-    <% else %>
-      <%= render 'shared/before_login_header' %>
-    <% end %>
-    <hr>
-    <%= render 'shared/flash_message' %>
-    <main>
-    <%= yield %>
-    </main>
-    <hr>
-    <%= render 'shared/footer' %>
+    <div id="wrapper">
+      <% if logged_in? %>
+        <%= render 'shared/header' %>
+      <% else %>
+        <%= render 'shared/before_login_header' %>
+      <% end %>
+      <hr>
+      <%= render 'shared/flash_message' %>
+      <main>
+        <%= yield %>
+      </main>
+      <hr>
+      <%= render 'shared/footer' %>
+    </div>
   </body>
 </html>

@@ -1,6 +1,7 @@
 <% content_for(:title, t('.title')) %>
 <section class="section">
   <div class="container">
+  <h1 class="title has-text-centered"><%= t '.title' %></h1>
     <figure>
       <% @posts.each do |post| %>
         <% post.photos.each do |photo| %>

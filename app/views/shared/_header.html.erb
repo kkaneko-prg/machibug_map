@@ -1,6 +1,6 @@
 <header>
   <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand ml-5 mt-5">
+    <div class="navbar-brand ml-5 mt-3">
       <%= link_to root_path do %>
         <%= image_tag "logo.png", size: "200x130" %>
       <% end %>
@@ -12,7 +12,7 @@
         </div>
       </div>
     </div>
-    <div id="navbarBasicExample" class="navbar-menu mt-5 mr-5">
+    <div id="navbarBasicExample" class="navbar-menu mt-3 mr-5">
       <div class="navbar-end">
         <div>
           <%= link_to photos_path do %>
@@ -28,19 +28,24 @@
         <div class="navbar-item">
           <%= link_to((t 'defaults.logout'), logout_path, { method: :delete, data: { confirm: 'ログアウトしますか？' }, class: 'linkcolor'}) %>
         </div>
-        <div class="navbar-item">
-          <span class="material-icons" id="open">menu</span>
-        <div>
-        <div class="overlay">
-          <span class="material-icons" id="close">close</span>
-          <nav>
-            <ul>
-              <li><%= link_to('Menu', '#', {class: 'linkcolor'}) %></li>
-              <li><%= link_to('Menu', '#', {class: 'linkcolor'}) %></li>
-              <li><%= link_to('Menu', '#', {class: 'linkcolor'}) %></li>
-            </ul>
-          </nav>
-        </div>
+      </div>
+    </div>
+    <div class="min_menu mt-4" id="min_menu">
+      <div class="navbar-item mr-6 mt-3">
+        <span class="material-icons" id="open">menu</span>
+      <div>
+
+      <div class="overlay">
+        <span class="material-icons" id="close">close</span>
+        <nav>
+          <ul>
+            <li><%= link_to('About', about_path, {class: 'linkcolor'}) %></li>
+            <li><%= link_to((t 'defaults.post'), new_post_path, {class: 'linkcolor'}) %></li>
+            <li><%= link_to((t 'posts.index.title'), photos_path, {class: 'linkcolor'}) %></li>
+            <li><%= link_to((t 'profiles.show.title'), profile_path, {class: 'linkcolor'}) %></li>
+            <li><%= link_to((t 'defaults.logout'), logout_path, { method: :delete, data: { confirm: 'ログアウトしますか？' }, class: 'linkcolor'}) %></li>
+          </ul>
+        </nav>
       </div>
     </div>
   </nav>

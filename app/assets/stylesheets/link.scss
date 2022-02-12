@@ -1,0 +1,16 @@
+// リンクが青色にならないように色を指定(すべてのリンクに適用)
+.linkcolor {
+    text-decoration: none;
+    color: #707070; 
+}
+  
+// リンクが青色にならないように色を指定(プロフィール画面のボタンに適用)
+.linkwhite {
+  text-decoration: none;
+  color: #FFFFFF; 
+}
+
+// マウスオーバーした際に、リンク色が変わらないように色を指定(プロフィール画面のボタンに適用)
+.linkwhite:hover {
+  color: #FFFFFF;
+}
