@@ -1,0 +1,35 @@
+// mapのスタイル
+#map_wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-top: 45%;
+  margin: auto;
+}
+   
+#map {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+// 【メディアクエリ】 タブレット：1024px以下の設定
+@media only screen and (max-width:1024px) {
+  #map_wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 125%;
+    margin: auto;
+  }
+}
+
+// 【メディアクエリ】 スマートフォン：599px以下の設定
+@media only screen and (max-width:599px) {
+  #map_wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 180%;
+    margin: auto;
+  }
+}
