@@ -20,9 +20,17 @@ hr {
     border: none;
     background-color: #707070;
   }
+
+  footer {
+    overflow: hidden;
+    margin-bottom: 40px;
+  }
 }
 
 // 【メディアクエリ】 スマートフォン：599px以下の設定
 @media only screen and (max-width:599px) {
-
+  footer {
+    overflow: hidden;
+    margin-bottom: 25px;
+  }
 }

@@ -80,25 +80,30 @@
   transition-delay: .5s;
 }
 
+// ハンバーガーメニューを隠す設定
 #min_menu {
   display: none; 
 }
 
 // 【メディアクエリ】 タブレット：1024px以下の設定
 @media only screen and (max-width:1024px) {
+  // ヘッダーのメニューを隠す設定
   .navbar-menu {
     display: none; 
   }
 
+  // ヘッダーのロゴを左寄せにする設定
   .navbar-brand {
     float: left;
   }
 
+  // ハンバーガーメニューの三印を表示させて、右寄せにする設定
   #min_menu {
     display: block;
     float: right;
   }
 
+  // ハンバーガーメニューの三印に関するスタイル調整
   #min_menu .navbar-item {
     top: 0px;
     right: 0px;
@@ -110,5 +115,21 @@
 
 // 【メディアクエリ】 スマートフォン：599px以下の設定
 @media only screen and (max-width:599px) {
+  // ハンバーガーメニューの三印に関するスタイル調整
+  #min_menu .navbar-item {
+    top: -10px;
+    right: 0px;
+    left: 40px;
+    font-size: 15px;
+    cursor: pointer;
+  }
 
+  // ハンバーガーメニューの×印に関するスタイル調整
+  .overlay #close {
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    font-size: 32px;
+    cursor: pointer;
+  }
 }

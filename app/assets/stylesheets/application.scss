@@ -35,18 +35,15 @@ body {
   background-color: #F8F8F8;
   font-family: 'Zen Maru Gothic', sans-serif;
   margin: 0;
+  // ヘッダー上部と右端に謎の余白ができてしまうのを、以下の記述で回避
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 // mainタグ内の要素の最低の高さを設定
 main {
   min-height: 600px;
-}
-
-// ヘッダー上と右端に謎の余白ができてしまうのを、以下の記述で回避
-#wrapper {
-  width:100%;
-  height: 100%;
-  overflow:hidden;
 }
 
 // 投稿画面のプレビュー画像のサイズ指定とプレビュー画像を横並びに配置する指定
@@ -63,7 +60,10 @@ main {
 
 // 【メディアクエリ】 タブレット：1024px以下の設定
 @media only screen and (max-width:1024px) {
-
+  // mainタグ内の要素の最低の高さを設定
+  main {
+    min-height: 960px;
+  }
 }
 
 // 【メディアクエリ】 スマートフォン：599px以下の設定
@@ -71,8 +71,14 @@ main {
   body {
     font-size: 10px;
   }
+  // ロゴの配置を調整
+  img {
+    margin-left: -20px;
+    margin-top: -10px;
+  }
 
+  // mainタグ内の要素の最低の高さを設定
   main {
-    min-height: 600px;
+    min-height: 725px;
   }
 }
