@@ -291,7 +291,7 @@
           }); // ここで投稿詳細ページへのリンクを表示させる
           marker.addListener('click', function() {
             infowindow.open(map, marker);
-            map.setZoom(15); // クリックされたマーカーにズームする
+            map.setZoom(12); // クリックされたマーカーに12までズームする
             map.setCenter(new google.maps.LatLng({lat: <%= spot.latitude %>, lng: <%= spot.longitude %>})); // クリックされたマーカーをセンターにする
           });
        })();
