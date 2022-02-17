@@ -21,15 +21,20 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Active Storage variant
-gem 'image_processing', '~> 1.2'
-gem 'mini_magick'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
-gem 'active_storage_validations'
 gem 'config'
 gem 'font-awesome-sass'
+
+# Active Storage関連
+gem 'active_storage_validations'
+gem 'aws-sdk-s3'
+gem 'image_processing', '~> 1.2'
+gem 'mini_magick'
+
+# 認証機能関連
 gem 'sorcery'
 
 # CSSフレームワーク
@@ -41,6 +46,8 @@ gem 'rails-i18n'
 # 管理機能関連
 gem 'rails_admin', '~> 2.0'
 gem 'rails_admin-i18n'
+
+# 認可機能関連
 gem 'cancancan'
 
 # Google Map関連
