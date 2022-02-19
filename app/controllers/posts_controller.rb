@@ -43,8 +43,9 @@ class PostsController < ApplicationController
 
   def destroy
     @post = current_user.posts.find(params[:id])
-    @post.destroy
-    redirect_to photos_url, success: t('.success')
+    # 投稿が削除されたら、写真もS3から削除する。
+    @post.photos.purge && @post.destroy
+    redirect_to root_url, success: t('.success')
   end
 
   private
