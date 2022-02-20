@@ -18,3 +18,33 @@ figcaption {
   text-align: center;
   margin: 0;
 }
+
+// 【メディアクエリ】 タブレット：1024px以下の設定
+@media only screen and (max-width:1024px) {
+  
+}
+
+// 【メディアクエリ】 スマートフォン：599px以下の設定
+@media only screen and (max-width:599px) {
+  // 写真一覧ページの写真部分のCSS指定
+  figure {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    max-width: 500px;
+    margin: 0 auto;
+    transform: translate(6%, 0);
+  }
+
+  // 写真一覧ページのキャプション部分のCSS指定
+  figcaption {
+    position: absolute;
+    width: 100%;
+    background-color:  rgba(0, 0, 0, .5);
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    margin: 0;
+    transform: translate(-6%, -120%);
+  }
+}
