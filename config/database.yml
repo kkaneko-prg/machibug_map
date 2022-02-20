@@ -80,6 +80,9 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   database: machibug_map_production
   username: machibug_map
   password: <%= ENV['MACHIBUG_MAP_DATABASE_PASSWORD'] %>
