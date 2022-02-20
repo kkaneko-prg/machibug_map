@@ -54,11 +54,12 @@ gem 'cancancan'
 gem 'dotenv-rails' # APIキー等を隠す。
 gem 'geocoder' # 住所から緯度経度を算出する。
 
+gem 'pry-rails'
+gem 'pry-byebug'
+
 group :development, :test do
   # Debugger
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  gem 'pry-rails'
-  gem 'pry-byebug'
   gem 'better_errors'
   gem 'binding_of_caller'
 
