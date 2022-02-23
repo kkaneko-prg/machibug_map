@@ -6,6 +6,7 @@ ja:
       post: '投稿'
       spot: '場所'
       like: 'いいね'
+      contact: 'お問い合わせ'
     attributes:
       user:
         name: 'ニックネーム'

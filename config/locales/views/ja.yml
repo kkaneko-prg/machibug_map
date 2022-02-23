@@ -77,3 +77,8 @@ ja:
     update:
       success: 'パスワードを変更しました'
       fail: 'パスワードの変更に失敗しました'
+  contacts:
+    new:
+      title: Contact
+    create:
+      success: 'お問い合わせを送信しました'
