@@ -20,7 +20,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      redirect_to photos_url, success: t('.success')
+      redirect_to @post, success: t('.success')
     else
       flash.now[:danger] = t('.fail')
       render :new

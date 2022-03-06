@@ -1,4 +1,6 @@
 class Spot < ApplicationRecord
+  validates :address, presence: true
+  
   belongs_to :post
 
   # addressカラムを基準に緯度経度を算出する。

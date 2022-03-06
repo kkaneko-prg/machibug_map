@@ -17,3 +17,5 @@ ja:
         photos: '画像ファイル'
       comment:
         body: 'コメント'
+      spot:
+        address: Address
